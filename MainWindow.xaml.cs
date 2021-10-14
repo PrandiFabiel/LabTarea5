@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RegistroConDetalle.UI.Registros;
 
 namespace RegistroConDetalle
 {
@@ -20,9 +21,22 @@ namespace RegistroConDetalle
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void RolesMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rRolesDetalle rRolesDetalle = new rRolesDetalle();
+            rRolesDetalle.Show();
+        }
+
+        private void ConsultaRolesMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
+

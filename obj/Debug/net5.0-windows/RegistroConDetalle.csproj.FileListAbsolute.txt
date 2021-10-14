@@ -57,3 +57,11 @@ C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\
 C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\ref\RegistroConDetalle.dll
 C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\RegistroConDetalle.pdb
 C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\RegistroConDetalle.genruntimeconfig.cache
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\bin\Debug\net5.0-windows\Resources\Buscar.png
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\bin\Debug\net5.0-windows\Resources\Eliminar.png
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\bin\Debug\net5.0-windows\Resources\Guardar.png
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\bin\Debug\net5.0-windows\Resources\Nuevo.png
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\bin\Debug\net5.0-windows\DATA\RolesControl.db
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\UI\Registros\rRolesDetalle.g.cs
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\RegistroConDetalle_Content.g.cs
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\UI\Registros\rRolesDetalle.baml

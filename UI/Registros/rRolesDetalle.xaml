@@ -1,0 +1,89 @@
+﻿<Window x:Class="RegistroConDetalle.UI.Registros.rRolesDetalle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroConDetalle.UI.Registros"
+        mc:Ignorable="d"
+        Title="rRolesDetalle" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,0,10,0">
+
+            <StackPanel Orientation="Vertical">
+                <Label Content="Rol Id:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="GrupoIdTextBox" Text="{Binding RolId}" Width="100" Height="18"/>
+                    <Button x:Name="BuscarButton" Margin="5,0" Click="BuscarButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Resources/Buscar.png" />
+                            <Label Content="Buscar"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Margin="220, 7">
+                        <CheckBox x:Name="ActivoCheckBox" Content="Activo" IsChecked="{Binding esActivo}"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Label Content="Descripción"/>
+                <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}"/>
+
+                <StackPanel Orientation="Vertical">
+                    <GroupBox Header="Detalles de Roles">
+                        <StackPanel Margin="10">
+                            <Label Content="Permiso"/>
+                            <ComboBox x:Name="PermisosComboBox" SelectedValue="{Binding PermisoId}"/>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="AgregarFilaButton" Margin="10" Click="AgregarFilaButton_Click" Width="123">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Resources/nuevo.png"></Image>
+                                        <Label Content="Agregar fila"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="RemoverFilaButton" Margin="10" Click="RemoverFilaButton_Click" Width="115">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Resources/Eliminar.png"></Image>
+                                        <Label Content="Eliminar fila"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+
+                            <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding RolesDetalle}" Height="80" AutoGenerateColumns="False" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Permiso Id" Binding="{Binding PermisoId}"/>
+                                    <DataGridTextColumn Header="Es asignado" Binding="{Binding esAsignado}"/>
+                                    <DataGridTextColumn Header="Descripcion" Binding="{Binding Descripcion}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+            </StackPanel>
+
+            <!--BARRA DE BOTONES-->
+            <StackPanel Orientation="Horizontal" Margin="0,15" HorizontalAlignment="Center" >
+                <Button x:Name="NuevoButton" Margin="5,0" Click="NuevoButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/nuevo.png" Width="30" />
+                        <Label Content="Nuevo" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="GuardarButton"   Margin="5,0" Click="GuardarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Guardar.png" Width="30"/>
+                        <Label Content="Guardar" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="EliminarButton"  Margin="5,0" Click="EliminarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Eliminar.png" Width="30"/>
+                        <Label Content="Eliminar" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
