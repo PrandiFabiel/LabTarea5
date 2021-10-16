@@ -21,6 +21,9 @@ namespace RegistroConDetalle.UI.Registros
     /// </summary>
     public partial class rRolesDetalle : Window
     {
+        public int cant;
+        public int total; 
+
         private Roles rol = new Roles();
         private Permisos permiso = new Permisos();
         public rRolesDetalle()
@@ -41,6 +44,8 @@ namespace RegistroConDetalle.UI.Registros
         {
             this.rol = new Roles();
             this.DataContext = rol;
+            this.permiso = new Permisos();
+            this.DataContext = permiso;
         }
         private bool Validar()
         {
@@ -86,6 +91,31 @@ namespace RegistroConDetalle.UI.Registros
             });
 
             Cargar();
+            cantidadPermisos();
+
+            string totalPermisos = total.ToString();
+            permiso.VecesAsignado = total;
+
+            CantidadPermisosTextBox.Text = totalPermisos; 
+
+        }
+
+        private void cantidadPermisos()
+        {
+            if (PermisosComboBox.SelectedIndex == 1)
+            {
+                total++;
+
+            }
+            else if (PermisosComboBox.SelectedIndex == 2)
+            {
+                total++;
+ 
+            }
+            else if (PermisosComboBox.SelectedIndex == 3)
+            {
+                total++;
+            }
 
         }
 

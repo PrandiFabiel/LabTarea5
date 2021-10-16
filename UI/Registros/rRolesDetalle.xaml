@@ -53,9 +53,14 @@
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Permiso Id" Binding="{Binding PermisoId}"/>
                                     <DataGridTextColumn Header="Es asignado" Binding="{Binding esAsignado}"/>
-                                    <DataGridTextColumn Header="Descripcion" Binding="{Binding Descripcion}"/>
+                                    <DataGridTextColumn Header="Descripcion del permiso" Binding="{Binding DescripcionPermiso}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Cantidad permisos asignados:" Margin="520,10,0,10"/>
+                                <TextBox x:Name="CantidadPermisosTextBox" Margin="0,10,0,10" Width="50" Text="{Binding VecesAsignado}"/>
+                            </StackPanel>
+
 
                         </StackPanel>
                     </GroupBox>

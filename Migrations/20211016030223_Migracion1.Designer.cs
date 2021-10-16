@@ -8,8 +8,8 @@ using RegistroConDetalle.DAL;
 namespace RegistroConDetalle.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20211014031419_Migracion_Inicial")]
-    partial class Migracion_Inicial
+    [Migration("20211016030223_Migracion1")]
+    partial class Migracion1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,9 @@ namespace RegistroConDetalle.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("VecesAsignado")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("PermisoId");
 
                     b.ToTable("Permisos");
@@ -38,19 +41,22 @@ namespace RegistroConDetalle.Migrations
                         {
                             PermisoId = 1,
                             Descripcion = "Permiso para administrar el sistema",
-                            Nombre = "Administrar"
+                            Nombre = "Administrar",
+                            VecesAsignado = 0
                         },
                         new
                         {
                             PermisoId = 2,
                             Descripcion = "Permiso para abrir la tienda",
-                            Nombre = "Abrir tienda"
+                            Nombre = "Abrir tienda",
+                            VecesAsignado = 0
                         },
                         new
                         {
                             PermisoId = 3,
                             Descripcion = "Permiso para pedir vacaciones",
-                            Nombre = "Vacaciones"
+                            Nombre = "Vacaciones",
+                            VecesAsignado = 0
                         });
                 });
 
@@ -76,6 +82,9 @@ namespace RegistroConDetalle.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("DescripcionPermiso")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("PermisoId")
                         .HasColumnType("INTEGER");
