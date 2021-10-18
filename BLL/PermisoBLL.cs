@@ -70,5 +70,21 @@ namespace RegistroConDetalle.BLL
             }
             return Lista;
         }
+
+        public static string GetDescripcion(int permisoId)
+        {
+            List<Permisos> lista = new();
+
+            lista = PermisoBLL.GetPermisos();
+            string descripcion = "";
+
+            foreach(var item in lista)
+            {
+                if (item.PermisoId == permisoId)
+                    descripcion = item.Descripcion;
+            }
+
+            return descripcion; 
+        }
     }
 }

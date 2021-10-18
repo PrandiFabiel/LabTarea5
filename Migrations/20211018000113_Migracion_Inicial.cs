@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RegistroConDetalle.Migrations
 {
-    public partial class Migracion1 : Migration
+    public partial class Migracion_Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,6 +28,7 @@ namespace RegistroConDetalle.Migrations
                 {
                     RolId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    FechaCreacion = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Descripcion = table.Column<string>(type: "TEXT", nullable: true),
                     esActivo = table.Column<bool>(type: "INTEGER", nullable: false)
                 },

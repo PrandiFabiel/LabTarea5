@@ -87,7 +87,8 @@ namespace RegistroConDetalle.UI.Registros
             {
                 RolId = rol.RolId,
                 PermisoId = (int)PermisosComboBox.SelectedValue,
-                esAsignado = true,
+                esAsignado = (bool)ActivoCheckBox.IsChecked,
+                DescripcionPermiso = PermisoBLL.GetDescripcion((int)PermisosComboBox.SelectedValue)
             });
 
             Cargar();

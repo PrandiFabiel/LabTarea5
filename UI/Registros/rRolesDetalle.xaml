@@ -28,6 +28,11 @@
                 <Label Content="Descripción"/>
                 <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}"/>
 
+                <StackPanel Orientation="vertical" Margin="0,1,1,10">
+                    <Label Content="FechaCreacion"/>
+                    <DatePicker x:Name="FechaCreacionDataPicker" SelectedDate="{Binding FechaCreacion}" SelectedDateFormat="Short"  />
+                </StackPanel>
+
                 <StackPanel Orientation="Vertical">
                     <GroupBox Header="Detalles de Roles">
                         <StackPanel Margin="10">
