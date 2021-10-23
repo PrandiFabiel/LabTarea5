@@ -12,7 +12,11 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\fabie\Desktop\clon de registro con detalle\LabTarea5\App.xaml
 2619393329
 4-814049659
+<<<<<<< HEAD
 17-511265534
+=======
+15-307639986
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
 213629597739
 MainWindow.xaml;UI\Registros\rRolesDetalle.xaml;
 

@@ -88,11 +88,16 @@ namespace RegistroConDetalle.BLL
             return descri;
         }
 
+<<<<<<< HEAD
         public static int GetVecesAsignado(int permisoId)
+=======
+        public static string GetDescripcion(int permisoId)
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
         {
             List<Permisos> lista = new();
 
             lista = PermisoBLL.GetPermisos();
+<<<<<<< HEAD
             int valor = 0;
             foreach (var item in lista)
             {
@@ -103,5 +108,17 @@ namespace RegistroConDetalle.BLL
             return valor;
         }
 
+=======
+            string descripcion = "";
+
+            foreach(var item in lista)
+            {
+                if (item.PermisoId == permisoId)
+                    descripcion = item.Descripcion;
+            }
+
+            return descripcion; 
+        }
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
     }
 }

@@ -21,8 +21,16 @@ namespace RegistroConDetalle.UI.Registros
     /// </summary>
     public partial class rRolesDetalle : Window
     {
+<<<<<<< HEAD
         private Roles Rol = new Roles();
         Permisos permisos = new();
+=======
+        public int cant;
+        public int total; 
+
+        private Roles rol = new Roles();
+        private Permisos permiso = new Permisos();
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
         public rRolesDetalle()
         {
             InitializeComponent();
@@ -42,8 +50,26 @@ namespace RegistroConDetalle.UI.Registros
         }
         private void Limpiar()
         {
+<<<<<<< HEAD
             this.Rol = new Roles();
             this.DataContext = Rol;
+=======
+            this.rol = new Roles();
+            this.DataContext = rol;
+            this.permiso = new Permisos();
+            this.DataContext = permiso;
+        }
+        private bool Validar()
+        {
+            bool esValido = true;
+            if (PermisosComboBox.Text.Length == 0)
+            {
+                esValido = false;
+                MessageBox.Show("Ha ocurrido un error, Inserte el permiso", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            return esValido;
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
@@ -68,6 +94,7 @@ namespace RegistroConDetalle.UI.Registros
 
             Rol.RolesDetalle.Add(new RolesDetalle
             {
+<<<<<<< HEAD
                 RolId = Rol.RolId,
                 PermisoId = (int)PermisoComboBox.SelectedValue,
                 esAsignado = (bool)esAsignadoCheckBox.IsChecked,
@@ -75,6 +102,40 @@ namespace RegistroConDetalle.UI.Registros
                 VecesAsignado = PermisoBLL.GetVecesAsignado((int)PermisoComboBox.SelectedValue)
             });
 
+=======
+                RolId = rol.RolId,
+                PermisoId = (int)PermisosComboBox.SelectedValue,
+                esAsignado = (bool)ActivoCheckBox.IsChecked,
+                DescripcionPermiso = PermisoBLL.GetDescripcion((int)PermisosComboBox.SelectedValue)
+            });
+
+            Cargar();
+            cantidadPermisos();
+
+            string totalPermisos = total.ToString();
+            permiso.VecesAsignado = total;
+
+            CantidadPermisosTextBox.Text = totalPermisos; 
+
+        }
+
+        private void cantidadPermisos()
+        {
+            if (PermisosComboBox.SelectedIndex == 1)
+            {
+                total++;
+
+            }
+            else if (PermisosComboBox.SelectedIndex == 2)
+            {
+                total++;
+ 
+            }
+            else if (PermisosComboBox.SelectedIndex == 3)
+            {
+                total++;
+            }
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
 
 
             Cargar();

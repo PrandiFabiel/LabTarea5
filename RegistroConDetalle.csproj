@@ -38,10 +38,15 @@
 
   <ItemGroup>
     <Folder Include="DATA\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <None Update="DATA\RolesControlV2.db">
+=======
+    <None Update="DATA\RolesControl.db">
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

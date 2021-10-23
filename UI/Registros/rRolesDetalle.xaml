@@ -29,6 +29,11 @@
                 <Label Content="Descripcion"/>
                 <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}"/>
 
+                <StackPanel Orientation="vertical" Margin="0,1,1,10">
+                    <Label Content="FechaCreacion"/>
+                    <DatePicker x:Name="FechaCreacionDataPicker" SelectedDate="{Binding FechaCreacion}" SelectedDateFormat="Short"  />
+                </StackPanel>
+
                 <StackPanel Orientation="Vertical">
                     <GroupBox Header="Roles Detalle" Margin="0,0,0,0">
                         <StackPanel Margin="10">
@@ -51,12 +56,23 @@
 
                             <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding RolesDetalle}" Height="80" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
+<<<<<<< HEAD
                                     <DataGridTextColumn Header="PermisoId" Binding="{Binding PermisoId}"/>
                                     <DataGridTextColumn Header="Descripcion" Binding="{Binding DescripcionPermiso}"/>
                                     <DataGridTextColumn Header="esAsignado" Binding="{Binding esAsignado}"/>
                                     <DataGridTextColumn Header="Veces Asignado" Binding="{Binding VecesAsignado}"/>
+=======
+                                    <DataGridTextColumn Header="Permiso Id" Binding="{Binding PermisoId}"/>
+                                    <DataGridTextColumn Header="Es asignado" Binding="{Binding esAsignado}"/>
+                                    <DataGridTextColumn Header="Descripcion del permiso" Binding="{Binding DescripcionPermiso}"/>
+>>>>>>> d19813d0649443f7847ccb4989996fa85b9b6d62
                                 </DataGrid.Columns>
                             </DataGrid>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Cantidad permisos asignados:" Margin="520,10,0,10"/>
+                                <TextBox x:Name="CantidadPermisosTextBox" Margin="0,10,0,10" Width="50" Text="{Binding VecesAsignado}"/>
+                            </StackPanel>
+
 
                         </StackPanel>
                     </GroupBox>
