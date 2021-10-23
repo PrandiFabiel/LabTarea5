@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fabie\\Documents\\UCNE\\Semestre 8\\ProgramacionAplicada\\Tareas_Entregadas\\Laboratorio\\RegistroConDetalle\\RegistroConDetalle.csproj": {}
+    "C:\\Users\\fabie\\Desktop\\clon de registro con detalle\\LabTarea5\\RegistroConDetalle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fabie\\Documents\\UCNE\\Semestre 8\\ProgramacionAplicada\\Tareas_Entregadas\\Laboratorio\\RegistroConDetalle\\RegistroConDetalle.csproj": {
+    "C:\\Users\\fabie\\Desktop\\clon de registro con detalle\\LabTarea5\\RegistroConDetalle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabie\\Documents\\UCNE\\Semestre 8\\ProgramacionAplicada\\Tareas_Entregadas\\Laboratorio\\RegistroConDetalle\\RegistroConDetalle.csproj",
+        "projectUniqueName": "C:\\Users\\fabie\\Desktop\\clon de registro con detalle\\LabTarea5\\RegistroConDetalle.csproj",
         "projectName": "RegistroConDetalle",
-        "projectPath": "C:\\Users\\fabie\\Documents\\UCNE\\Semestre 8\\ProgramacionAplicada\\Tareas_Entregadas\\Laboratorio\\RegistroConDetalle\\RegistroConDetalle.csproj",
+        "projectPath": "C:\\Users\\fabie\\Desktop\\clon de registro con detalle\\LabTarea5\\RegistroConDetalle.csproj",
         "packagesPath": "C:\\Users\\fabie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabie\\Documents\\UCNE\\Semestre 8\\ProgramacionAplicada\\Tareas_Entregadas\\Laboratorio\\RegistroConDetalle\\obj\\",
+        "outputPath": "C:\\Users\\fabie\\Desktop\\clon de registro con detalle\\LabTarea5\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabie\\AppData\\Roaming\\NuGet\\NuGet.Config",

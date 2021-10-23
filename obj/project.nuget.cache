@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GEq+K/F2J1MhrB77IiJlkuoT9LXn6rmChEeW33XGYLctIoeXcd+uPAlswbmS2gcL6Wk9dGlAX3EBmG0HATVAfg==",
+  "dgSpecHash": "Nc1I4+CJfrnJRBdhfOPAZv+Ljp2vFL7/1LHdEKykgypwXa6bnyJ5JBaMF4RrC2oXJyNMLrAAPItmWcwS/NVRKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabie\\Documents\\UCNE\\Semestre 8\\ProgramacionAplicada\\Tareas_Entregadas\\Laboratorio\\RegistroConDetalle\\RegistroConDetalle.csproj",
+  "projectFilePath": "C:\\Users\\fabie\\Desktop\\clon de registro con detalle\\LabTarea5\\RegistroConDetalle.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabie\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\fabie\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
