@@ -64,4 +64,4 @@ C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\
 C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\UI\Registros\rRolesDetalle.g.cs
 C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\RegistroConDetalle_Content.g.cs
 C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\obj\Debug\net5.0-windows\UI\Registros\rRolesDetalle.baml
-C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\bin\Debug\net5.0-windows\DATA\RolesControl.db
+C:\Users\fabie\Documents\UCNE\Semestre 8\ProgramacionAplicada\Tareas_Entregadas\Laboratorio\RegistroConDetalle\bin\Debug\net5.0-windows\DATA\RolesControlV2.db

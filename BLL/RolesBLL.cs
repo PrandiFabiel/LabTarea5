@@ -18,15 +18,24 @@ namespace RegistroConDetalle.BLL
                 return Insertar(rol);
             else
                 return Modificar(rol);
+
         }
+
         private static bool Insertar(Roles rol)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
-
+            Permisos permiso = new();
             try
             {
                 contexto.Roles.Add(rol);
+                foreach (var Item in rol.RolesDetalle)
+                {
+                    permiso = contexto.Permisos.Find(Item.PermisoId);
+                    permiso.VecesAsignado += 1;
+                }
+
+
                 paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -37,8 +46,11 @@ namespace RegistroConDetalle.BLL
             {
                 contexto.Dispose();
             }
+
             return paso;
+
         }
+
         private static bool Modificar(Roles rol)
         {
             bool paso = false;
@@ -46,13 +58,11 @@ namespace RegistroConDetalle.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete FROM RolesDetalle Where RolId={rol.RolId}");
-
+                contexto.Database.ExecuteSqlRaw($"Delete from RolesDetalle where RolId={rol.RolId}");
                 foreach (var item in rol.RolesDetalle)
                 {
                     contexto.Entry(item).State = EntityState.Added;
                 }
-
                 contexto.Entry(rol).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
             }
@@ -64,8 +74,11 @@ namespace RegistroConDetalle.BLL
             {
                 contexto.Dispose();
             }
+
             return paso;
+
         }
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -73,7 +86,7 @@ namespace RegistroConDetalle.BLL
 
             try
             {
-                var rol = RolesBLL.Buscar(id);
+                var rol = contexto.Roles.Find(id);
 
                 if (rol != null)
                 {
@@ -90,18 +103,18 @@ namespace RegistroConDetalle.BLL
             {
                 contexto.Dispose();
             }
+
             return paso;
         }
+
         public static Roles Buscar(int id)
         {
-            Roles tarea = new Roles();
             Contexto contexto = new Contexto();
+            Roles rol = new Roles();
 
             try
             {
-                tarea = contexto.Roles.Include(x => x.RolesDetalle)
-                    .Where(x => x.RolId == id)
-                    .SingleOrDefault();
+                rol = contexto.Roles.Include(x => x.RolesDetalle).Where(p => p.RolId == id).SingleOrDefault();
             }
             catch (Exception)
             {
@@ -111,8 +124,56 @@ namespace RegistroConDetalle.BLL
             {
                 contexto.Dispose();
             }
-            return tarea;
+
+            return rol;
         }
+
+        public static List<Roles> GetList(Expression<Func<Roles, bool>> criterio)
+        {
+            List<Roles> lista = new List<Roles>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                lista = contexto.Roles.Where(criterio).ToList();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
+        }
+
+
+        public static List<Roles> GetRoles()
+        {
+            List<Roles> lista = new List<Roles>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                lista = contexto.Roles.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
+        }
+
+
         public static bool Existe(int id)
         {
             Contexto contexto = new Contexto();
@@ -122,6 +183,7 @@ namespace RegistroConDetalle.BLL
             {
                 encontrado = contexto.Roles.Any(e => e.RolId == id);
             }
+
             catch (Exception)
             {
                 throw;
@@ -132,25 +194,6 @@ namespace RegistroConDetalle.BLL
             }
 
             return encontrado;
-        }
-        public static List<Roles> GetList(Expression<Func<Roles, bool>> criterio)
-        {
-            List<Roles> Lista = new List<Roles>();
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                Lista = contexto.Roles.Where(criterio).ToList();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return Lista;
         }
     }
 }

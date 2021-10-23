@@ -13,17 +13,16 @@ namespace RegistroConDetalle.BLL
     {
         public static Permisos Buscar(int id)
         {
-
             Contexto contexto = new Contexto();
-            Permisos permiso;
+            Permisos permiso = new Permisos();
 
             try
             {
                 permiso = contexto.Permisos.Find(id);
+
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
@@ -33,42 +32,49 @@ namespace RegistroConDetalle.BLL
 
             return permiso;
         }
+
+        public static List<Permisos> GetList(Expression<Func<Permisos, bool>> criterio)
+        {
+            List<Permisos> lista = new List<Permisos>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                lista = contexto.Permisos.Where(criterio).ToList();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
+        }
+
         public static List<Permisos> GetPermisos()
         {
             List<Permisos> lista = new List<Permisos>();
             Contexto contexto = new Contexto();
+
             try
             {
                 lista = contexto.Permisos.ToList();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return lista;
-        }
-        public static List<Permisos> GetList(Expression<Func<Permisos, bool>> criterio)
-        {
-            List<Permisos> Lista = new List<Permisos>();
-            Contexto contexto = new Contexto();
 
-            try
-            {
-                Lista = contexto.Permisos.Where(criterio).ToList();
-            }
-            catch (Exception)
-            {
                 throw;
             }
             finally
             {
                 contexto.Dispose();
             }
-            return Lista;
+
+            return lista;
         }
 
         public static string GetDescripcion(int permisoId)
@@ -76,15 +82,29 @@ namespace RegistroConDetalle.BLL
             List<Permisos> lista = new();
 
             lista = PermisoBLL.GetPermisos();
-            string descripcion = "";
-
-            foreach(var item in lista)
+            string descri = "";
+            foreach (var item in lista)
             {
                 if (item.PermisoId == permisoId)
-                    descripcion = item.Descripcion;
+                    descri = item.Descripcion;
             }
 
-            return descripcion; 
+            return descri;
+        }
+
+        public static int GetVecesAsignado(int permisoId)
+        {
+            List<Permisos> lista = new();
+
+            lista = PermisoBLL.GetPermisos();
+            int valor = 0;
+            foreach (var item in lista)
+            {
+                if (item.PermisoId == permisoId)
+                    valor = item.VecesAsignado;
+            }
+
+            return valor;
         }
     }
 }

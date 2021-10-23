@@ -94,6 +94,9 @@ namespace RegistroConDetalle.Migrations
                     b.Property<int>("RolId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("VecesAsignado")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("esAsignado")
                         .HasColumnType("INTEGER");
 

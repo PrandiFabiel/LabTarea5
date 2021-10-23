@@ -9,8 +9,8 @@ using RegistroConDetalle.DAL;
 namespace RegistroConDetalle.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20211018000113_Migracion_Inicial")]
-    partial class Migracion_Inicial
+    [Migration("20211023143751_Migracion_NumeroDos")]
+    partial class Migracion_NumeroDos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -94,6 +94,9 @@ namespace RegistroConDetalle.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("RolId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("VecesAsignado")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("esAsignado")

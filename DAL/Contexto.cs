@@ -15,7 +15,7 @@ namespace RegistroConDetalle.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source = DATA\RolesControl.db");
+            optionsBuilder.UseSqlite(@"Data Source = DATA\RolesControlV2.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

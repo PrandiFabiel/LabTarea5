@@ -10,45 +10,40 @@
         <StackPanel Orientation="Vertical" Margin="10,0,10,0">
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Rol Id:"/>
+                <Label Content="RolId:"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="GrupoIdTextBox" Text="{Binding RolId}" Width="100" Height="18"/>
+                    <TextBox x:Name="RolDetelleIdTextBox" Text="{Binding RolId}"  Width="100" Height="18"/>
                     <Button x:Name="BuscarButton" Margin="5,0" Click="BuscarButton_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Resources/Buscar.png" />
+                            <Image Source="/Resources/Buscar.png" Height="24"/>
                             <Label Content="Buscar"/>
                         </StackPanel>
                     </Button>
-                    <StackPanel Margin="220, 7">
-                        <CheckBox x:Name="ActivoCheckBox" Content="Activo" IsChecked="{Binding esActivo}"/>
-                    </StackPanel>
+                    <CheckBox  x:Name="esActivoCheckBox" Content="Activo" IsChecked="{Binding esActivo}" Margin="40,0,0,0"/>
                 </StackPanel>
 
-                <Label Content="Descripción"/>
+                <Label Content="Fecha"/>
+                <DatePicker x:Name="FechaDatepicker" SelectedDate="{Binding FechaCreacion}"/>
+
+                <Label Content="Descripcion"/>
                 <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}"/>
 
-                <StackPanel Orientation="vertical" Margin="0,1,1,10">
-                    <Label Content="FechaCreacion"/>
-                    <DatePicker x:Name="FechaCreacionDataPicker" SelectedDate="{Binding FechaCreacion}" SelectedDateFormat="Short"  />
-                </StackPanel>
-
                 <StackPanel Orientation="Vertical">
-                    <GroupBox Header="Detalles de Roles">
+                    <GroupBox Header="Roles Detalle" Margin="0,0,0,0">
                         <StackPanel Margin="10">
+                            <CheckBox  x:Name="esAsignadoCheckBox" Content="Es Asignado" IsChecked="{Binding esAsignado}" Margin="340,1,0,0"/>
                             <Label Content="Permiso"/>
-                            <ComboBox x:Name="PermisosComboBox" SelectedValue="{Binding PermisoId}"/>
+                            <ComboBox x:Name="PermisoComboBox" SelectedValue="{Binding PermisoId}" />
 
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="AgregarFilaButton" Margin="10" Click="AgregarFilaButton_Click" Width="123">
+                                <Button x:Name="AgregarFilaButton" Margin="10" Click="AgregarFilaButton_Click"  Width="123">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="/Resources/nuevo.png"></Image>
                                         <Label Content="Agregar fila"/>
                                     </StackPanel>
                                 </Button>
-                                <Button x:Name="RemoverFilaButton" Margin="10" Click="RemoverFilaButton_Click" Width="115">
+                                <Button x:Name="RemoverFilaButton" Margin="10" Click="RemoverFilaButton_Click"  Width="115">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="/Resources/Eliminar.png"></Image>
                                         <Label Content="Eliminar fila"/>
                                     </StackPanel>
                                 </Button>
@@ -56,16 +51,12 @@
 
                             <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding RolesDetalle}" Height="80" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Permiso Id" Binding="{Binding PermisoId}"/>
-                                    <DataGridTextColumn Header="Es asignado" Binding="{Binding esAsignado}"/>
-                                    <DataGridTextColumn Header="Descripcion del permiso" Binding="{Binding DescripcionPermiso}"/>
+                                    <DataGridTextColumn Header="PermisoId" Binding="{Binding PermisoId}"/>
+                                    <DataGridTextColumn Header="Descripcion" Binding="{Binding DescripcionPermiso}"/>
+                                    <DataGridTextColumn Header="esAsignado" Binding="{Binding esAsignado}"/>
+                                    <DataGridTextColumn Header="Veces Asignado" Binding="{Binding VecesAsignado}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="Cantidad permisos asignados:" Margin="520,10,0,10"/>
-                                <TextBox x:Name="CantidadPermisosTextBox" Margin="0,10,0,10" Width="50" Text="{Binding VecesAsignado}"/>
-                            </StackPanel>
-
 
                         </StackPanel>
                     </GroupBox>

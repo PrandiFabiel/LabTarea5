@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RegistroConDetalle.Migrations
 {
-    public partial class Migracion_Inicial : Migration
+    public partial class Migracion_NumeroDos : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,7 +46,8 @@ namespace RegistroConDetalle.Migrations
                     RolId = table.Column<int>(type: "INTEGER", nullable: false),
                     PermisoId = table.Column<int>(type: "INTEGER", nullable: false),
                     esAsignado = table.Column<bool>(type: "INTEGER", nullable: false),
-                    DescripcionPermiso = table.Column<string>(type: "TEXT", nullable: true)
+                    DescripcionPermiso = table.Column<string>(type: "TEXT", nullable: true),
+                    VecesAsignado = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
